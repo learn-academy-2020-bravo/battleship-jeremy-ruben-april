@@ -33,6 +33,7 @@ body {
   font-size: 13px;
   margin-bottom: 20px;
   font-family: 'Rubik Mono One', sans-serif;
+  color: white;
 }
 
 h1 {
@@ -44,12 +45,28 @@ h1 {
   line-height: 30px;
 }
 
+.regularFont {
+  color: black;
+}
+
+.warningFont {
+  color: red;
+}
+
 #reset {
   font-size: 20px;
   font-family: 'Rubik Mono One', sans-serif;
+  margin-bottom: 20px;
 }
 
 .photos {
   width: 50px;
   height: 50px;
+}
+
+#footer {
+  font-size: 10px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  color: white;
 }

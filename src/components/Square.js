@@ -11,8 +11,7 @@ class Square extends Component{
       <>
         <div
         id="square"
-        onClick = { this.handleClickToApp}
-        >
+        onClick = { this.handleClickToApp} >
           <img src = { this.props.value } alt = "photos" className = "photos"/>
         </div>
       </>
