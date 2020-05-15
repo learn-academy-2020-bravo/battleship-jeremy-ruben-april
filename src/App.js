@@ -67,7 +67,7 @@ class App extends Component{
     let twoNums
     let oneNum
     // Check to see if a ship is less than the length intended, if so then repeat random number generation
-    const generateShips = () => {
+    // const generateShips = () => {
       // Generate random index number for grid array
       let randomGridNum1 = Math.floor(Math.random() * 20)
       let randomGridNum2 = Math.floor(Math.random() * 20)
@@ -107,17 +107,18 @@ class App extends Component{
       threeNums.map(index=> shipIndexes.push(index))
       twoNums.map(index=> shipIndexes.push(index))
       shipIndexes.push(oneNum)
-    }
+    // }
     // Check if there are any repeat indexes within ships indexes, if so repeat generateShips function
-    while (shipIndexes.some((value,index)=>shipIndexes.indexOf(value) !== index)) {
-      generateShips()
-    }
-    // **UNCOMMENT BELOW to display all ships at start**
+    // while (shipIndexes.some((value,index)=>shipIndexes.indexOf(value) !== index)) {
+    //   generateShips()
+    // }
+    // // **UNCOMMENT BELOW to display all ships at start**
     fiveNums.map(index=> squares[index] = Battleship)
     fourNums.map(index=> squares[index] = Battleship)
     threeNums.map(index=> squares[index] = Battleship)
     twoNums.map(index=> squares[index] = Battleship)
     squares[oneNum] = Battleship
+    console.log(shipIndexes)
     // Set state
     this.setState({ squares, shipIndexes })
   }

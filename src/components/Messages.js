@@ -3,7 +3,7 @@ import '../App.css'
 
 class Messages extends Component {
   render() {
-    /*Conditional rendering for different messages*/
+    // Conditional rendering for different messages
     let message
     if (this.props.hitCounter === 0) {
       message = <h3>You've destroyed all battleships!</h3>
