@@ -1,33 +1,55 @@
+body {
+  background-color: gray;
+}
+
 #body {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  font-family: 'Rubik Mono One', sans-serif;
 }
 
 #square {
   width: 50px;
   height: 50px;
-  border: 1px solid black;
+  border: 0.5px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 30px;
+  font-size: 5px;
 }
 
 #board {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 550px;
+  width: 520px;
 }
 
 #message {
   height: 30px;
-  font-size: 20px;
-  margin-bottom: 40px;
+  font-size: 13px;
+  margin-bottom: 20px;
+  font-family: 'Rubik Mono One', sans-serif;
 }
 
 h1 {
   margin-bottom: 0px;
+  font-family: 'Rubik Mono One', sans-serif;
+}
+
+#stats {
+  line-height: 30px;
+}
+
+#reset {
+  font-size: 20px;
+  font-family: 'Rubik Mono One', sans-serif;
+}
+
+.photos {
+  width: 50px;
+  height: 50px;
 }

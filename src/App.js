@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import Square from './components/Square'
 import Messages from './components/Messages'
+import Battleship from './images/battleship.png'
+import Torpedo from './images/torpedo.png'
+import Water from './images/water.png'
 import './App.css'
 
 class App extends Component{
@@ -20,14 +23,14 @@ class App extends Component{
 
   componentDidMount() {
     let squares = []
-    for (let i=0; i<100; i++) squares.push("🌊")
+    for (let i=0; i<100; i++) squares.push(Water)
     let shipIndexes = []
     while(shipIndexes.length < 5){
       let r = Math.floor(Math.random() * 100)
       if(shipIndexes.indexOf(r) === -1) shipIndexes.push(r)
     }
     // shipIndexes.map(index => {
-    //   return squares[index] = "🚢"
+    //   return squares[index] = Battleship
     // })
     this.setState({
       squares: squares,
@@ -36,7 +39,7 @@ class App extends Component{
     console.log(shipIndexes)
   }
 
-  handleClick = (value, index) => {
+  handleClick = (index) => {
     let { squares } = this.state
     let { torpIndexes } = this.state
     let { torpCounter } = this.state
@@ -46,7 +49,7 @@ class App extends Component{
     let { missed } = this.state
     let { done } = this.state
     if (shipIndexes.includes(index) && !torpIndexes.includes(index) && !done) {
-      squares[index] = "☠️"
+      squares[index] = Battleship
       torpIndexes.push(index)
       hitCounter--
       torpCounter--
@@ -54,7 +57,7 @@ class App extends Component{
       missed = false
     }
     else if (!torpIndexes.includes(index) && !done) {
-      squares[index] = "💨"
+      squares[index] = Torpedo
       torpIndexes.push(index)
       torpCounter--
       sunkShip = false
@@ -65,7 +68,7 @@ class App extends Component{
     else if (torpCounter === 0) {
       done = true
       shipIndexes.map(index => {
-        return squares[index] = "🚢"
+        return squares[index] = Battleship
       })
     }
     this.setState({ done, squares})
@@ -100,7 +103,7 @@ class App extends Component{
     return(
       <>
         <div id="body">
-          <h1>Battleship App</h1>
+          <h1>Battleship</h1>
           <div id="message">
             <Messages
               hitCounter = { this.state.hitCounter}
@@ -112,8 +115,10 @@ class App extends Component{
           <div id="board">
             { squares }
           </div>
-          <div> Torpedoes left: { this.state.torpCounter } <br/> Battleships to destroy: { this.state.hitCounter }</div>
-          <button id="reset" onClick = { this.reset }>Reset</button>
+          <div id="footer">
+            <p id="stats">Torpedoes left: { this.state.torpCounter }<br/>Battleships to destroy: { this.state.hitCounter }</p>
+          </div>
+          <button id="reset" onClick = { this.reset }>Restart</button>
         </div>
       </>
     )

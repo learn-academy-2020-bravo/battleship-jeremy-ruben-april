@@ -3,7 +3,7 @@ import '../App.css'
 
 class Square extends Component{
   handleClickToApp = () => {
-    this.props.handleClick(this.props.value, this.props.index)
+    this.props.handleClick(this.props.index)
   }
 
   render(){
@@ -13,7 +13,7 @@ class Square extends Component{
         id="square"
         onClick = { this.handleClickToApp}
         >
-          { this.props.value }
+          <img src = { this.props.value } alt = "photos" className = "photos"/>
         </div>
       </>
     )

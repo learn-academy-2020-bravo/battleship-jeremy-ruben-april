@@ -5,7 +5,7 @@ class Messages extends Component {
   render() {
     let message
     if (this.props.hitCounter === 0) {
-      message = <h3>You destroyed all the battleships!</h3>
+      message = <h3>You've destroyed all battleships!</h3>
     } else if (this.props.torpCounter === 0 && this.props.hitCounter !== 0) {
       message = <h3>No more torpedoes! You lose!</h3>
     } else if (this.props.sunkShip) {
